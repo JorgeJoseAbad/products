@@ -4,18 +4,24 @@
         <ul>
             <% products.forEach((product) => { %>
               <li class="one-product">
-                <%= product.name %> - $<%= product.price %> - <%=product.description%><br>
                 <div class="image">
-                 <img src="<%=product.imageUrl%>" height="100" width="100" >
+                 <img src="<%=product.imageUrl%>">
                 </div>
-                <div class="productInformation">
-                  <a href="/products/<%= product._id %>">View Details</a>
-                  <a href="/products/<%= product._id %>/edit/">Edit Product</a>
-                </div>
-                <div class="delete-form">
-                  <form action="/products/<%= product._id%>/delete" method="POST">
-                     <button type="submit">Delete Product</button>
-                  </form>
+                <div class="productInformation ">
+                  <h5><%= product.name %></h5>
+                  <div class="details">
+                    <p>price $<%= product.price %></p>
+                    <p>description <%=product.description%><br></p>
+                  </div>
+                  <div >
+                    <a href="/products/<%= product._id %>">View Details</a>
+                    <a href="/products/<%= product._id %>/edit/">Edit Product</a>
+                  </div>
+                  <div class="delete-form">
+                    <form action="/products/<%= product._id%>/delete" method="POST">
+                       <button type="submit">Delete Product</button>
+                    </form>
+                  </div>
                 </div>
               </li>
             <%  }) %>

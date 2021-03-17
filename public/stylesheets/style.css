@@ -14,30 +14,58 @@ a {
 
 .one-product{
   margin-bottom: 20px;
+  display: flex;
+  border: 1px double #73AD21;
+  background-color: antiquewhite;
+  box-shadow: 7px 6px 6px 3px teal;
 }
 
 .image{
-
-  width: 100%;
+  flex: 30%;
   height: auto;
+  float:left;
   position: relative;
-  border: 1px solid #73AD21;
   margin: 0 auto;
   padding: 10px;
 
 }
 
 .image img{
+  height: 200px;
   width: auto;
 }
 
 .productInformation{
+  flex: 70%;
   position: relative;
   left: 20px;
+  padding: 20px;
+}
+
+.productInformation h5{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.details{
+  width: 90%;
+
+}
+
+.details p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
 }
 
 .delete-form{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   background-color: green;
+  width: inherit;
+  float: right;
+  margin-right: 20px;
 }
 
 .search-results{
