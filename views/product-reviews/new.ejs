@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+<!-- views/product-reviews/new.ejs -->
+<form class="pa4 black-80" action="/products/<%= product._id %>/reviews" method="POST">
+  <div class="measure">
+    <label class="f6 b db mb2" for="author">Email Address</label>
+    <input class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" name="author" id="author">
+  </div>
 
-    <title>New Review</title>
-  </head>
-  <body>
-      <!-- views/product-reviews/new.ejs -->
-      <form action="/products/<%= product._id %>/reviews" method="POST">
-        <label for="author">Email Address</label>
-        <input type="text" name="author" id="author">
+  <div class="measure">
+    <label class="f6 b db mb2" for="author">Stars</label>
+    <input class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number" name="stars" id="stars">
+  </div>
 
-        <label for="author">Stars</label>
-        <input type="number" name="stars" id="stars">
+  <div class="measure">
+    <label class="f6 b db mb2" for="content">Content</label>
+    <textarea class="input-reset ba b--black-20 pa2 mb2 db w-100" name="content" rows="3" cols="80"></textarea>
+  </div>
 
-        <label for="content">Content</label>
-        <textarea name="content" rows="3" cols="80"></textarea>
-
-        <button type="submit">Submit Review</button>
-      </form>
-  </body>
-</html>
+  <button class="no-underline near-white bg-animate bg-near-black hover-bg-gray inline-flex items-center ma2 tc br2 pa2" type="submit">Submit Review</button>
+</form>

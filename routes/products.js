@@ -48,7 +48,10 @@ router.get('/search', (req, res) => {
   // For instance if I searched "Yoga", I would then find the Yoga Mat
   Products.find({ name: queryRegex }, (err, products) => {
     if (err) { next(err); }
-    res.render('products/search-results', {products:products});
+    res.render('products/search-results', {
+      products:products,
+      order: "search"
+    });
   });
 });
 
@@ -82,6 +85,7 @@ router.get('/:id', (req, res, next) => {
   const productId = req.params.id;
   Products.findById(productId, (err, product) => {
     if (err) { return next(err); }
+    debugger;  //ojo quitar esto
     res.render('products/show', { product: product });
   });
 });
