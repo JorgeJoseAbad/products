@@ -1,25 +1,24 @@
-
-
+<main class="mw6 center">
+    <h1 class="f3 f2-m f1-l helvetica bb b--dark-gray pb2">Edit Product</h1>
     <form class="measure center" action="/products/<%= product._id %>" method="POST">
       <fieldset id="update" class="ba b--transparent ph0 mh0">
-
         <div class="mt3">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" value="<%= product.name %>">
+          <label class="db fw6 lh-copy f6" for="name">Name</label>
+          <input class="b pa2 input-reset ba bg-transparent hover-bb-blue w-100" type="text" id="name" name="name" value="<%= product.name %>">
         </div>
         <div class="mv3">
-          <label for="price">Price</label>
-          <input type="number" name="price" id="price" value="<%= product.price %>">
+          <label class="db fw6 lh-copy f6" for="price">Price</label>
+          <input class="b pa2 input-reset ba bg-transparent hover-bb-blue w-100" type="number" name="price" id="price" value="<%= product.price %>">
         </class>
         <div class="mv3">
-          <label for="image-url">Image URL</label>
-          <input type="text" name="imageUrl" id="image-url" value="<%= product.imageUrl %>">
+          <label class="db fw6 lh-copy f6" for="image-url">Image URL</label>
+          <input class="b pa2 input-reset ba bg-transparent hover-bb-blue w-100" type="text" name="imageUrl" id="image-url" value="<%= product.imageUrl %>">
         </class>
         <div class="mv3">
-          <label for="description">Description</label>
-          <textarea type="text" name="description" id="description"><%= product.description %></textarea>
+          <label class="db fw6 lh-copy f6" for="description">Description</label>
+          <textarea class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" type="text" name="description" id="description"><%= product.description %></textarea>
         </div>
-
       </fieldset>
       <button type="submit">Update Product</button>
     </form>
+</div>
