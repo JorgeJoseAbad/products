@@ -58,7 +58,10 @@ router.get('/cheapest', (req, res, next) => {
     .sort({ price: "ascending" })
     .exec((err, products) => {
       if (err) { next(err); }
-      res.render('products/search-results',  {products:products});
+      res.render('products/search-results',  {
+        products:products,
+        order:"cheapest first"
+      });
     });
 });
 
@@ -68,7 +71,10 @@ router.get('/expensive', (req, res, next) => {
     .sort({ price: "descending" })
     .exec((err, products) => {
       if (err) { next(err); }
-      res.render('products/search-results',  {products});
+      res.render('products/search-results',  {
+        products,
+        order:"Expensive first"
+      });
     });
 });
 

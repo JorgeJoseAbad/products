@@ -1,6 +1,21 @@
-
-    <h4>List of ordened products</h4>
+<main class="mw6 center">
+  <h4 class="f3 f2-m f1-l helvetica bb b--dark-gray pb2">
+    List of ordened products by <%=order%>
+  </h4>
+  <div class="pa3 pa5-ns">
     <% products.forEach((product) => { %>
-      <div class="search-results"><a href="/products/<%= product.id %>"><%= product.name %></a> - $<%= product.price %></div>
+    <div class="search-results">
+      <div class="dib b">
+        <a href="/products/<%= product.id %>">
+          <%= product.name %>
+        </a>
+      </div>
+      <div class="dib ml0 gray">
+        $
+        <%= product.price %>
+      </div>
+    </div>
     <%  }); %>
-   <a href="/products">return to index</a>
+  </div>
+  <a href="/products">return to index</a>
+</main>
