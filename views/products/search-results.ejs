@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title></title>
+  </head>
+  <body>
+    <h4>List of ordened products</h4>
+    <% products.forEach((product) => { %>
+      <div class="search-results"><a href="/products/<%= product.id %>"><%= product.name %></a> - $<%= product.price %></div>
+    <%  }); %>
+   <a href="/products">return to index</a>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ li{
+   height: auto;
+    width: 50%;
+ }
+
+.one-product{
+  margin-bottom: 20px;
+}
+
+.image{
+
+  width: 100%;
+  height: auto;
+  position: relative;
+  border: 1px solid #73AD21;
+  margin: 0 auto;
+  padding: 10px;
+
+}
+
+.image img{
+  width: auto;
+}
+
+.productInformation{
+  position: relative;
+  left: 20px;
+}
+
+.delete-form{
+  background-color: green;
+}
+
+.search-results{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

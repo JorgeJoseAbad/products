@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+
+    <title>Edit</title>
+  </head>
+  <body>
+
+    <form class="measure center" action="/products/<%= product._id %>" method="POST">
+      <fieldset id="update" class="ba b--transparent ph0 mh0">
+
+        <div class="mt3">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value="<%= product.name %>">
+        </div>
+        <div class="mv3">
+          <label for="price">Price</label>
+          <input type="number" name="price" id="price" value="<%= product.price %>">
+        </class>
+        <div class="mv3">
+          <label for="image-url">Image URL</label>
+          <input type="text" name="imageUrl" id="image-url" value="<%= product.imageUrl %>">
+        </class>
+        <div class="mv3">
+          <label for="description">Description</label>
+          <textarea type="text" name="description" id="description"><%= product.description %></textarea>
+        </div>
+
+      </fieldset>
+      <button type="submit">Update Product</button>
+    </form>
+
+  </body>
+</html>
