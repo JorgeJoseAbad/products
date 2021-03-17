@@ -1,19 +1,29 @@
 
 
-  <h1><%= product.name %></h1>
-  <img src="<%= product.imageUrl %>" height="400" width="400">
-  <h3>Price: <span>$<%= product.price %></span></h3>
-  <p><%= product.description %></p>
+<article class="pa3 pa5-ns">
+  <h1 class="f2">
+    <%= product.name %>
+  </h1>
+  <img src="<%= product.imageUrl %>" class="w-100 f5 measure" alt="<%= product.name %>">
+  <p class="measure lh-copy">
+    <%= product.description %>
+  </p>
   <hr>
-  <h2>Reviews</h2>
   <ul>
     <% product.reviews.forEach((review) => { %>
-      <li>
-        <p><%= review.content %></p>
+    <li>
+      <p class="measure lh-copy">
+        <%= review.content %>
+        <br>
         <strong><%= review.author %></strong>
-      </li>
+      </p>
+
+    </li>
     <%  }); %>
   </ul>
-  <a href="/products/<%= product._id %>/reviews/new">New Review</a>
-  <br>
-  <a href="/products">return to products page</a>
+  <div class="pa4 lh-copy">
+    <a class="f4 fw6 db navy link link dim" href="/products/<%= product._id %>/reviews/new">New Review</a>
+    <br>
+    <a class="f4 fw6 db purple link dim" href="/products">return to products page</a>
+  </div>
+</article>
