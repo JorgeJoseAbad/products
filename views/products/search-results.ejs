@@ -1,24 +1,37 @@
 <main class="mw6 center">
   <h4 class="f3 f2-m f1-l helvetica bb b--dark-gray pb2">
-    List of ordened products by <%=searchTerm%>
+    List of ordened products by
+    <%=searchTerm%>
   </h4>
   <div class="pa3 pa5-ns">
     <%if (products.length === 0) {%>
-      <b>No hay productos buscados por el término: "<%=searchTerm%>"</b>
+    <b>No hay productos buscados por el término: "
+      <%=searchTerm%>"</b>
     <%} else {%>
+    <div class="search-results">
       <% products.forEach((product) => { %>
-      <div class="search-results">
-        <div class="dib b">
-          <a href="/products/<%= product.id %>">
+      <article class="dt w-100 bb b--black-05 pb2 mt2">
+        <div class="dtc w2 w3-ns v-mid">
+            <a href="<%=product.id%>"">
+              <img src="<%=product.imageUrl%>"  class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns" />
+            </a>
+        </div>
+        <div class="dtc v-mid pl3">
+          <h1 class="f6 f5-ns fw6 lh-title black mv0">
             <%= product.name %>
-          </a>
+          </h1>
+          <h2 class="f6 fw4 mt0 mb0 black-60">$
+            <%= product.price %>
+          </h2>
         </div>
-        <div class="dib ml0 gray">
-          $
-          <%= product.price %>
+        <div class="dtc v-mid">
+          <form class="w-100 tr" action="/working" method="get">
+            <button class="f6 button-reset bg-white ba b--black-10 dim pointer pv1 black-60" type="submit">comprar</button>
+          </form>
         </div>
-      </div>
+      </article>
       <%  }); %>
+    </div>
     <%}%>
 
   </div>
