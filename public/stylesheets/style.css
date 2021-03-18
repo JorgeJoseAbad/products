@@ -76,3 +76,7 @@ a {
 .form-delete{
     box-shadow: 5px 4px 4px 1px teal;
 }
+
+ .mynavbar{
+  padding-bottom: 0.1rem !important;
+}
