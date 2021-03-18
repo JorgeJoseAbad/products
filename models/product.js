@@ -1,7 +1,7 @@
 /*jshint esversion: 6*/
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
-const Review   = require('./review'); // New
+const Review   = require('./review'); 
 
 const ProductSchema = new Schema({
   name: {
