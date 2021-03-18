@@ -8,11 +8,9 @@ const Products = require('../models/product');
 router.get('/', function(req, res, next) {
   Products.find({},function(err,products){
     if (err) return next(err);
-
-    res.render('products/index',{products:products}); // va a la carpeta wiews a buscar el products.ejs
-    //res.send(products)
+    res.render('products/index',{products:products});
   });
-  //res.send('respond with a resource');
+
 });
 
 router.get('/new', function (req, res, next) {
@@ -30,15 +28,6 @@ router.post('/', function (req, res, next) {
     res.redirect('/products');
   });
 });
-
-/*router.get('/product-details', (req, res, next) => {
-  const productId = req.query.id;
-  Products.findById(productId, (err, product) => {
-    if (err) { return next(err); }
-    res.render('products/show', { product: product });
-  });
-});
-*/
 
 router.get('/search', (req, res) => {
   let query = req.query.searchTerm;
@@ -85,7 +74,6 @@ router.get('/:id', (req, res, next) => {
   const productId = req.params.id;
   Products.findById(productId, (err, product) => {
     if (err) { return next(err); }
-    debugger;  //ojo quitar esto
     res.render('products/show', { product: product });
   });
 });
