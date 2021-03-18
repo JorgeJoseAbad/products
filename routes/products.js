@@ -49,8 +49,8 @@ router.get('/search', (req, res) => {
   Products.find({ name: queryRegex }, (err, products) => {
     if (err) { next(err); }
     res.render('products/search-results', {
-      products:products,
-      order: "search"
+      products: products,
+      searchTerm: ' term: ' + query,
     });
   });
 });
@@ -63,7 +63,7 @@ router.get('/cheapest', (req, res, next) => {
       if (err) { next(err); }
       res.render('products/search-results',  {
         products:products,
-        order:"cheapest first"
+        searchTerm:" criterion: cheapest first"
       });
     });
 });
@@ -76,7 +76,7 @@ router.get('/expensive', (req, res, next) => {
       if (err) { next(err); }
       res.render('products/search-results',  {
         products,
-        order:"Expensive first"
+        searchTerm:" criterion: expensive first"
       });
     });
 });
