@@ -9,7 +9,7 @@ router.get('/products/:productId/reviews/new', (req, res, next) => {
   let productId = req.params.productId;
 
   Product.findById(productId, (err, product) => {
-    if (err) { next(err); }
+    if (err) { return next(err); }
     res.render('product-reviews/new', { product: product });
   });
 });
@@ -18,6 +18,7 @@ router.post('/products/:productId/reviews', (req, res, next) => {
   let productId = req.params.productId;
 
   Product.findById(productId, (err, product) => {
+    if (err) return next(err);
     //create a new instance of Review
     const newReview = new Review({
       content: req.body.content,
@@ -41,6 +42,8 @@ router.post('/products/:productId/reviews/:reviewId/delete',(req,res,next) => {
    console.log(idProduct,idReview);
 
   Product.findById(idProduct,(err, product) => {
+    if (err) return next(err);
+
     let index = product.reviews.findIndex((elem) => {
        elem._id = idReview;
     })

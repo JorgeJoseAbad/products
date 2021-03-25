@@ -2,7 +2,8 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/ironhack-products',{
   useUnifiedTopology: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 
