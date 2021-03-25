@@ -18,12 +18,14 @@ router.post('/products/:productId/reviews', (req, res, next) => {
   let productId = req.params.productId;
 
   Product.findById(productId, (err, product) => {
+    //create a new instance of Review
     const newReview = new Review({
       content: req.body.content,
       stars: req.body.stars,
       author: req.body.author
     });
 
+    //and push it in product.reviews array
     product.reviews.push(newReview);
 
     product.save((err) => {
@@ -32,5 +34,23 @@ router.post('/products/:productId/reviews', (req, res, next) => {
   });
 
 });
+
+router.post('/products/:productId/reviews/:reviewId/delete',(req,res,next) => {
+   const idProduct = req.params.productId;
+   const idReview  = req.params.reviewId;
+   console.log(idProduct,idReview);
+
+  Product.findById(idProduct,(err, product) => {
+    let index = product.reviews.findIndex((elem) => {
+       elem._id = idReview;
+    })
+    product.reviews.splice(index,1);
+
+    product.save((err) => {
+      res.redirect(`/products/${product._id}`);
+    });
+  })
+
+})
 
 module.exports = router;

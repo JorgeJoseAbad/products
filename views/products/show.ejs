@@ -16,6 +16,9 @@
         <strong>
           <%= review.author %></strong>
       </p>
+      <form class="" action="/products/<%= product._id %>/reviews/<%= review._id %>/delete" method="post">
+        <button type="submit" name="button">Eliminar</button>
+      </form>
     </li>
     <%  }); %>
   </ul>
